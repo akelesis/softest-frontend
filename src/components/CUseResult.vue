@@ -1,5 +1,6 @@
 <template>
   <div class="c-use">
+    <!-- Tabela de resultados C-Uso -->
     <h2>RESULTADO C-USO</h2>
     <div class="table-container">
       <table>
@@ -11,32 +12,24 @@
         </thead>
 
         <tbody>
-          <tr v-for="variable in variables" :key="variable">
-            <td>{{ variable.name }}</td>
-            <td>{{ variable.value }}</td>
+          <!-- Itera nos registros do C-Uso -->
+          <tr v-for="variable in cUso.variaveis" :key="variable.name">
+            <td>{{ variable.identificador }}</td>
+            <td>{{ variable.valor }}</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="total-container">
-      <h3 class="c-use-result">Total: {{ total }}</h3>
+      <!-- Total do C-Uso -->
+      <h3 class="c-use-result">Total: {{cUso.total }}</h3>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      variables: [
-        {
-          name: "contador",
-          value: 45,
-        },
-      ],
-      total: 45,
-    };
-  },
+  props: ["cUso"],
 };
 </script>
 

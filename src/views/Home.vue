@@ -9,27 +9,29 @@
 </template>
 
 <script>
-import Description from '../components/Description'
-import Header from '../components/Header'
-import CodeInput from '../components/CodeInput'
+import Description from "../components/Description";
+import Header from "../components/Header";
+import CodeInput from "../components/CodeInput";
+
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Description,
     Header,
-    CodeInput
+    CodeInput,
   }
-}
+  
+};
 </script>
 
 <style>
-  .home {
-    width: 70vw;
-  }
+.home {
+  width: 70vw;
+}
 
-  .content-container {
-    display: flex;
-    justify-content: space-between;
-  }
+.content-container {
+  display: flex;
+  justify-content: space-between;
+}
 </style>

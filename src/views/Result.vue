@@ -2,10 +2,10 @@
   <div class="result">
       <Header />
       <div class="tables-container">
-        <VariableTable/>
+        <VariableTable :cUso="cUso" />
         <div class="use-cases">
-            <CUseResult/>
-            <PUseResult />
+            <CUseResult :cUso="cUso" />
+            <PUseResult :pUso="pUso" />
         </div>
       </div>
       <button class="default-button" @click="redirectHome">RETORNAR</button>
@@ -25,10 +25,27 @@ export default {
         CUseResult,
         PUseResult
     },
+    data() {
+        return {
+            resultado: {},
+            pUso: {},
+            cUso: {}
+        }
+    },
     methods: {
         redirectHome() {
             this.$router.push("/")
+        },
+        async getResult() {
+            this.pUso = JSON.parse(localStorage.getItem("__pUso"))
+            this.cUso = JSON.parse(localStorage.getItem("__cUso"))
+
+            console.log(this.cUso)
+            console.log(this.pUso)
         }
+    },
+    mounted() {
+        this.getResult()
     }
 }
 </script>

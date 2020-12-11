@@ -1,4 +1,5 @@
 <template>
+  <!-- Descrição de uso -->
   <div class="description">
     <p>
       O Softest é um projeto desenvolvido para facilitar o processo de testes
@@ -16,13 +17,13 @@ export default {};
 </script>
 
 <style>
-    .description {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        color: #a4a4a4;
-        width: 40%;
-        text-align: start;
-        font-size: 20px;
-        text-align: justify;
-    }
+.description {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #a4a4a4;
+  width: 40%;
+  text-align: start;
+  font-size: 20px;
+  text-align: justify;
+}
 </style>

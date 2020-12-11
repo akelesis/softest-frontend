@@ -1,5 +1,6 @@
 <template>
   <div class="variable-table">
+    <!-- Tabela de resultados de Variáveis -->
     <h2>VARIÁVEIS</h2>
     <div class="table-container">
       <table>
@@ -11,13 +12,13 @@
             <td>ULTIMO USO</td>
           </tr>
         </thead>
-
         <tbody>
-          <tr v-for="variable in variables" :key="variable">
-            <td>{{ variable.name }}</td>
-            <td>{{ variable.type }}</td>
+          <!-- Itera nos registros do C-Uso -->
+          <tr v-for="variable in cUso.variaveis" :key="variable.name">
+            <td>{{ variable.identificador }}</td>
+            <td>{{ variable.tipo }}</td>
             <td>{{ variable.def }}</td>
-            <td>{{ variable.lastUse }}</td>
+            <td>{{ variable.ultimoUso }}</td>
           </tr>
         </tbody>
       </table>
@@ -27,18 +28,7 @@
 
 <script>
 export default {
-  data() {
-    return {
-      variables: [
-        {
-          name: "contador",
-          type: "int",
-          def: 5,
-          lastUse: 45,
-        },
-      ],
-    };
-  },
+  props: ["cUso"]
 };
 </script>
 
